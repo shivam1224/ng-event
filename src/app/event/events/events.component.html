@@ -1,0 +1,29 @@
+<div class="card">
+  <h5 class="card-header">Fluper Assignment</h5>
+</div>
+<div class="form-row" style="margin-top: 20px;">
+  <div class="col">
+    <input type="text" [(ngModel)]='email' (keyup)="filterEmail()" class="form-control" placeholder="Search Email" />
+  </div>
+  <div class="col">
+    <input type="text" [(ngModel)]='env' (keyup)="filterEnv()" class="form-control" placeholder="Search Environment" />
+  </div>
+</div>
+<table class="table" style="margin-top: 80px;">
+  <thead>
+    <tr>
+      <th scope="col">Email</th>
+      <th scope="col">Environment</th>
+      <th scope="col">Component</th>
+      <th scope="col">Amout</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let event of events">
+      <th scope="row">{{ event.email }}</th>
+      <td>{{ event.environment }}</td>
+      <td>{{ event.component }}</td>
+      <td>{{ event.data.amount }}</td>
+    </tr>
+  </tbody>
+</table>
